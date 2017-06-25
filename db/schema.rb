@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625122837) do
+ActiveRecord::Schema.define(version: 20170625124943) do
 
   create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "route_id", null: false
@@ -35,6 +35,23 @@ ActiveRecord::Schema.define(version: 20170625122837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["active"], name: "index_routes_on_active"
+  end
+
+  create_table "spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.decimal "longtitude", precision: 9, scale: 6, null: false
+    t.decimal "latitude", precision: 9, scale: 6, null: false
+    t.string "phone_number"
+    t.time "opens", null: false
+    t.time "close", null: false
+    t.string "api_url", null: false
+    t.string "address", null: false
+    t.string "zipcode", null: false
+    t.string "official_url"
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
