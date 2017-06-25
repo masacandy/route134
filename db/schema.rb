@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170625124943) do
   create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false
     t.string "description", null: false
-    t.boolean "weekday", null: false
+    t.integer "opens", null: false
     t.integer "transpotation", null: false
     t.integer "situation", null: false
     t.integer "activity_time", null: false
