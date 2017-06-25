@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  weekday: 
+  transpotation_type: 1
+  situation_type: 1
+  activity_time_type: 1
+  sort: 1
+  active: 
+
+two:
+  title: MyString
+  description: MyString
+  weekday: 
+  transpotation_type: 1
+  situation_type: 1
+  activity_time_type: 1
+  sort: 1
+  active: 

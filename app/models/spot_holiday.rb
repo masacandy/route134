@@ -1,0 +1,2 @@
+class SpotHoliday < ApplicationRecord
+end

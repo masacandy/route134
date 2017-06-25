@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route_id: 
+  spot_id: 
+  sort: 
+  active: false
+
+two:
+  route_id: 
+  spot_id: 
+  sort: 
+  active: false
