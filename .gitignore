@@ -28,4 +28,5 @@
 /public/packs-test
 /node_modules
 
+/config/unicorn.conf.rb
 /config/database.yml
