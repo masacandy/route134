@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625121631) do
+ActiveRecord::Schema.define(version: 20170625122837) do
+
+  create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "route_id", null: false
+    t.integer "spot_id", null: false
+    t.integer "sort", null: false
+    t.boolean "active", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_route_spots_on_active"
+    t.index ["route_id", "spot_id"], name: "index_route_spots_on_route_id_and_spot_id", unique: true
+  end
 
   create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false

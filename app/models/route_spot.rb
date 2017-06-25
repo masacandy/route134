@@ -1,0 +1,2 @@
+class RouteSpot < ApplicationRecord
+end
