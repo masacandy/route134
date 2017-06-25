@@ -10,6 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170625121631) do
+
+  create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.boolean "weekday", null: false
+    t.integer "transpotation", null: false
+    t.integer "situation", null: false
+    t.integer "activity_time", null: false
+    t.integer "sort", null: false
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_routes_on_active"
+  end
 
 end
