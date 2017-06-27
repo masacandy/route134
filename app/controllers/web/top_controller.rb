@@ -1,3 +1,3 @@
-class Web::TopController < ApplicationController
-  def index;end
+class Web::TopController < Web::BaseController
+  def index; end
 end
