@@ -1,0 +1,29 @@
+.top-main
+  nav.nav.main
+    .container
+      .nav-left route134
+
+  section.top-search
+    .container.tagline
+      h1.title.has-text-centered  ワガママな週末を叶えてくれる、湘南ルート
+
+    .container.search-form
+      = form_with url: routes_path, method: :get, local: true do |form|
+        .field.has-addons.has-addons-centered
+          span
+            #datepicker
+             datepicker.test(:placeholder="placeholder")
+          p.control
+            span.select.is-medium
+              = form.select :situation, Route.situations
+          p.control
+            span.select.is-medium
+              = form.select :transpotation, Route.transpotations
+          p.control
+            span.select.is-medium
+              = form.select :activity_time, Route.activity_times
+          p.control
+            span
+              = form.submit 'さがす', class: 'button is-primary is-medium'
+
+= javascript_pack_tag 'calender_vue'

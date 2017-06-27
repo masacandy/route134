@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+@import "bulma";
+
+.top-main {
+  background: image-url("top-background.jpg") no-repeat center top;
+  height: 100vh;
+
+  section.top-search {
+
+    .container.tagline {
+      padding-top: 240px;
+    }
+
+    .container.search-form {
+      padding-top: 120px;
+
+      form {
+        .field {
+          span {
+            #datepicker {
+              .vdp-datepicker {
+                div {
+                  input {
+                    line-height: 39px;
+                    font-size: 22px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+nav.nav.main {
+  background-color: transparent;
+}
