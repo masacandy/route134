@@ -12,7 +12,7 @@
         .field.has-addons.has-addons-centered
           span
             #datepicker
-             datepicker.test(:placeholder="placeholder")
+             datepicker(:value="state.date" name="date")
           p.control
             span.select.is-medium
               = form.select :situation, Route.situations
