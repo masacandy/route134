@@ -1,3 +1,6 @@
 class Web::RoutesController < Web::BaseController
-  def index ;end
+  require 'irb'
+
+  def index
+  end
 end
