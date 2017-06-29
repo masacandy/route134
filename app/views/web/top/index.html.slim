@@ -1,18 +1,29 @@
-.top-main
-  nav.nav.main
-    .container
-      .nav-left route134
+section.hero.is-fullheight.top-main
+  .hero-head
+    header.nav
+      .container
+        .nav-left
+          a.nav-item
 
-  section.top-search
-    .container.tagline
-      h1.title.has-text-centered  ワガママな週末を叶えてくれる、湘南ルート
+  .hero-body
+    .container.has-text-centered.width100
+      .tagline
+        .pc
+          h1.title
+            | ワガママな週末を叶えてくれる、湘南ルート
+        .sp
+          h1.title
+            |ワガママな週末を
+          h1.title
+            | 叶えてくれる
+          h1.title
+            | 湘南ルート
 
-    .container.search-form
       = form_with url: routes_path, method: :get, local: true do |form|
-        .field.has-addons.has-addons-centered
-          span
+        .search-form.field.has-addons.has-addons-centered.sp-form
+          .class.control
             #datepicker
-             datepicker(:value="state.date" name="date")
+              datepicker(:value="state.date" name="date")
           p.control
             span.select.is-medium
               = form.select :situation, Route.situations
@@ -22,8 +33,7 @@
           p.control
             span.select.is-medium
               = form.select :activity_time, Route.activity_times
-          p.control
+          p.control.submit-button
             span
               = form.submit 'さがす', class: 'button is-primary is-medium'
-
 = javascript_pack_tag 'calender_vue'

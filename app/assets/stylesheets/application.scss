@@ -15,32 +15,44 @@
  */
 @import "bulma";
 
-.top-main {
+section.top-main {
   background: image-url("top-background.jpg") no-repeat center top;
-  height: 100vh;
+}
 
-  section.top-search {
+.width100 {
+  width: 100%;
+}
 
-    .container.tagline {
-      padding-top: 240px;
-    }
+#datepicker {
+  input {
+    height: 45px;
+  }
+}
 
-    .container.search-form {
-      padding-top: 120px;
+.sp {
+  display: none;
+}
 
-      form {
-        .field {
-          span {
-            #datepicker {
-              .vdp-datepicker {
-                div {
-                  input {
-                    line-height: 39px;
-                    font-size: 22px;
-                  }
-                }
-              }
-            }
+@media(max-width:769px) {
+  .pc {
+    display: none;
+  }
+
+  .sp {
+    display: inherit;
+  }
+}
+
+@media(max-width:769px) {
+  .hero.is-fullheight  {
+    .hero-body {
+      aligin-items: flex-start;
+      display: inline;
+
+      .container {
+        .tagline {
+          .title {
+            font-size: 1.75rem;
           }
         }
       }
@@ -48,6 +60,33 @@
   }
 }
 
-nav.nav.main {
-  background-color: transparent;
+@media(max-width:769px) {
+  .sp-form {
+    display: inherit !important;
+    margin-top: 24px;
+
+    .class {
+      #datepicker {
+        input {
+          width: 100%;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .control {
+      .select{
+        width: 100%;
+        margin-bottom: 8px;
+
+        select {
+          width: 100%;
+        }
+      }
+    }
+
+    .submit-button {
+      text-align: right;
+    }
+  }
 }
