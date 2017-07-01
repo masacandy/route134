@@ -1,5 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+/* * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
@@ -123,6 +122,9 @@ section.show-routes {
 
 @media(max-width:769px) {
   .container {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+
     .columns {
       overflow: inherit !important;
       height: 100%;
