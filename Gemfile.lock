@@ -107,6 +107,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
+    google-analytics-rails (1.1.0)
     i18n (0.8.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -288,6 +289,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   gmaps4rails
+  google-analytics-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2
