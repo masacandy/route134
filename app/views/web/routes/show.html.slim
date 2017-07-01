@@ -28,4 +28,29 @@ section.hero.show-routes
                   | 詳細
 
       .column.route-map
+        #map style="width: 100%; height: 800px;"
 
+script src="//maps.google.com/maps/api/js?v=3.23&key=#{ENV['GOOGLE_KEY']}"
+script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"
+script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'
+
+
+javascript:
+  handler = Gmaps.build('Google');
+  handler.buildMap(
+    {
+      provider: {},
+      internal: {id: 'map'}
+    },
+    function(){
+      markers = handler.addMarkers([
+        {
+          "lat": 35.292598,
+          "lng": 139.562964,
+          "infowindow": "hello!"
+        }
+      ])
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    }
+  );

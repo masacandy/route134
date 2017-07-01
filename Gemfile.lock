@@ -106,6 +106,7 @@ GEM
     git_diff_parser (2.3.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     i18n (0.8.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -286,6 +287,7 @@ DEPENDENCIES
   checkstyle_filter-git
   coffee-rails (~> 4.2)
   dotenv-rails
+  gmaps4rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2
