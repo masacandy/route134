@@ -94,3 +94,17 @@ section.top-main {
     }
   }
 }
+
+// show route
+
+section.show-routes {
+  .container {
+    .columns {
+      .column {
+        .card {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

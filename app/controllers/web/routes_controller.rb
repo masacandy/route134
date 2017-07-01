@@ -3,6 +3,7 @@ class Web::RoutesController < Web::BaseController
   end
 
   def show
-    @route = Route.find(params[:id])
+    route = Route.find(params[:id])
+    @spots = route.spots
   end
 end

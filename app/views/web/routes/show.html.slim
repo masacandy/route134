@@ -1,0 +1,31 @@
+section.hero.show-routes
+  .hero-head
+    header.nav
+      .container
+        .nav-left
+          a.nav-item
+  .container
+    .columns.is-text-centered
+      .column.route-spots
+        - @spots.each do |spot|
+          .card
+            .card-image
+              figure.image.is-4by3
+                img(src="http://bulma.io/images/placeholders/1280x960.png" alt="Image")
+            .card-content
+              .media
+                .media-content
+                  p.title.is-12
+                    = spot.name
+              .content
+                = spot.description
+            footer.card-footer
+              p.card-footer-item
+                span
+                  | 詳細
+              p.card-footer-item
+                span
+                  | 詳細
+
+      .column.route-map
+
