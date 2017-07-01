@@ -43,13 +43,7 @@ javascript:
       internal: {id: 'map'}
     },
     function(){
-      markers = handler.addMarkers([
-        {
-          "lat": 35.292598,
-          "lng": 139.562964,
-          "infowindow": "hello!"
-        }
-      ])
+      markers = handler.addMarkers(#{raw @hash.to_json})
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
     }
