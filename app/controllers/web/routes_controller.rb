@@ -1,6 +1,8 @@
 class Web::RoutesController < Web::BaseController
-  require 'irb'
-
   def index
+  end
+
+  def show
+    @route = Route.find(params[:id])
   end
 end
