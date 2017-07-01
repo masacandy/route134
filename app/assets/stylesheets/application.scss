@@ -100,9 +100,40 @@ section.top-main {
 section.show-routes {
   .container {
     .columns {
-      .column {
+      overflow: hidden;
+      height: 800px;
+
+      .column.route-spots {
+        overflow: scroll;
+
         .card {
           margin-bottom: 16px;
+        }
+      }
+
+      .column.route-map {
+        #map {
+          width: 100%;
+          height: 800px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:769px) {
+  .container {
+    .columns {
+      overflow: inherit !important;
+      height: 100%;
+
+      .column.route-spots {
+        overflow: inherit !important;;
+      }
+
+      .column.route-map {
+        #map {
+          height: 450px !important;
         }
       }
     }
