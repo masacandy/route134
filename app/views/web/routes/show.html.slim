@@ -3,23 +3,26 @@ section.hero.show-routes
 
   .container
     .columns.is-text-centered
-      .column.route-spots
+      .column.route-spots.is-one-third
         - @spots.each do |spot|
           .card
             .card-image
-              figure.image.is-4by3
-                img(src="http://bulma.io/images/placeholders/1280x960.png" alt="Image")
+              figure.image.is-square
+                img(src="http://bulma.io/images/placeholders/480x480.png" alt="Image")
             .card-content
               .media
                 .media-content
                   p.title.is-12
                     = spot.name
               .content
-                = spot.description
+                - if spot.description.size < 30
+                  = spot.description
+                - else
+                  = spot.description.first(30) + "..."
             footer.card-footer
               p.card-footer-item
                 span
-                  | 詳細
+                  = link_to '詳細', spot_path(spot.id)
 
       .column.route-map
         #map

@@ -1,0 +1,33 @@
+section.hero
+  = render partial: 'web/shared/header'
+
+  .container
+    .card
+      .card-content
+        h1.title
+          = @spot.name
+    .card
+      .card-image
+        figure.image.is-square
+          img(src="http://bulma.io/images/placeholders/480x480.png")
+      .card-content
+        .content
+          = @spot.description
+        hr
+        .content
+          .info
+            span.icon
+              i.fa.fa-map-marker
+            span
+              = "#{@spot.zipcode} #{@spot.address}"
+          .info
+            span.icon
+              i.fa.fa-clock-o
+            span
+              = "#{@spot.opens.strftime("%H:%M")} ~ #{@spot.close.strftime("%H:%M")}"
+          - if @spot.phone_number.present?
+            .info
+              span.icon
+                i.fa.fa-phone
+              span
+                = "#{@spot.phone_number}"
