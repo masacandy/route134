@@ -35,8 +35,6 @@ section.top-main {
 }
 
 @media(max-width:769px) {
-  -webkit-overflow-scrolling: touch;
-
   .pc {
     display: none;
   }
@@ -110,7 +108,7 @@ section.show-routes {
         overflow: scroll;
 
         .card {
-          margin-bottom: 16px;
+          margin-bottom: 32px;
         }
       }
 
@@ -129,10 +127,14 @@ section.show-routes {
 
     .columns {
       overflow: inherit !important;
+      -webkit-overflow-scrolling: touch;
+
       height: 100%;
 
       .column.route-spots {
         overflow: inherit !important;;
+        -webkit-overflow-scrolling: touch;
+
       }
 
       .column.route-map {
