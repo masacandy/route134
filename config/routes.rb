@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :spots, only: %i(show)
   end
 
+  resources :privacy_policy, only: %i(index)
   get '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
 end
