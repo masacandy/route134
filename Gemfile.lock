@@ -100,6 +100,8 @@ GEM
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     git (1.3.0)
     git_clone_url (2.0.0)
       uri-ssh_git (>= 2.0)
@@ -288,6 +290,7 @@ DEPENDENCIES
   checkstyle_filter-git
   coffee-rails (~> 4.2)
   dotenv-rails
+  font-awesome-rails
   gmaps4rails
   google-analytics-rails
   jbuilder (~> 2.5)

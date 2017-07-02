@@ -12,7 +12,9 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bulma";
+@import "font-awesome";
 
 section.top-main {
   background: image-url("top-background.jpg") no-repeat center top;
@@ -33,6 +35,8 @@ section.top-main {
 }
 
 @media(max-width:769px) {
+  -webkit-overflow-scrolling: touch;
+
   .pc {
     display: none;
   }
@@ -122,8 +126,6 @@ section.show-routes {
 
 @media(max-width:769px) {
   .container {
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
 
     .columns {
       overflow: inherit !important;
@@ -141,3 +143,12 @@ section.show-routes {
     }
   }
 }
+
+// show spots
+
+section.section.show-spots {
+  .container {
+    max-width: 600px;
+  }
+}
+
