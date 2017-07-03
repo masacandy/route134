@@ -28,7 +28,7 @@ class Web::RoutesController < Web::BaseController
   def visiting_moment
     day = Date.parse(params[:date]).wday
 
-    return Route.visitations[:holiday] if HOLIDAYS.include?(day)
+    return Route.visitations[:weekend] if HOLIDAYS.include?(day)
     Route.visitations[:weekday]
   end
 
