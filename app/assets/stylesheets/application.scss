@@ -109,6 +109,14 @@ section.show-routes {
 
         .card {
           margin-bottom: 32px;
+
+          .card-image {
+            figure {
+              img {
+                object-fit: cover;
+              }
+            }
+          }
         }
       }
 
@@ -151,6 +159,16 @@ section.show-routes {
 section.show-spots {
   .container {
     max-width: 600px;
+
+    .card {
+      .card-image {
+        figure {
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
   }
 }
 

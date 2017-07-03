@@ -1,0 +1,13 @@
+ja:
+  routes:
+    transportations:
+      train: 電車
+      car: 車
+    situations:
+      dating: デート
+      by_yourself: 一人旅
+      groups: みんなで
+    activity_times:
+      all_day: 一日中
+      am: 午前中
+      pm: 午後
