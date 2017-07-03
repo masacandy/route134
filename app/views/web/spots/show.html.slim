@@ -9,7 +9,7 @@ section.hero.show-spots
     .card
       .card-image
         figure.image.is-square
-          img(src="http://bulma.io/images/placeholders/480x480.png")
+          = image_tag("spots/#{@spot.id}.jpg")
       .card-content
         .content
           = @spot.description
