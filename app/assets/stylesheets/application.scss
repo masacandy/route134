@@ -130,6 +130,12 @@ section.show-routes {
   }
 }
 
+@media(max-width: 600px) {
+  section.show-routes {
+      padding: 0;
+  }
+}
+
 @media(max-width:769px) {
   .container {
 
@@ -172,3 +178,8 @@ section.show-spots {
   }
 }
 
+@media(max-width: 600px) {
+  section.show-spots {
+      padding: 0;
+  }
+}
