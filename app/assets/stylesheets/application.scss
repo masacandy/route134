@@ -16,7 +16,26 @@
 @import "bulma";
 @import "font-awesome";
 
+section {
+  .hero-head {
+    header.nav.has-shadow {
+      .container {
+        .nav-left {
+          a.nav-item {
+            img {
+              max-height: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 section.top-main {
+  header.nav {
+    box-shadow: none !important;
+  }
   background: image-url("top-background.jpg") no-repeat center top;
 }
 

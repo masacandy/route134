@@ -1,5 +1,6 @@
 .hero-head
-  header.nav
+  header.nav.has-shadow
     .container
       .nav-left
-        a.nav-item
+        = link_to root_path, class: 'nav-item' do
+          = image_tag('logo.png')
