@@ -1,12 +1,12 @@
-section.hero.show-spots
+section
   = render partial: 'web/shared/header'
 
+section.section.show-spots
   .container
     .card
       .card-content
         h1.title
           = @spot.name
-    .card
       .card-image
         figure.image.is-square
           = image_tag("spots/#{@spot.id}.jpg")

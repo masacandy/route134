@@ -16,7 +16,26 @@
 @import "bulma";
 @import "font-awesome";
 
+section {
+  .hero-head {
+    header.nav.has-shadow {
+      .container {
+        .nav-left {
+          a.nav-item {
+            img {
+              max-height: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 section.top-main {
+  header.nav {
+    box-shadow: none !important;
+  }
   background: image-url("top-background.jpg") no-repeat center top;
 }
 
@@ -130,6 +149,12 @@ section.show-routes {
   }
 }
 
+@media(max-width: 600px) {
+  section.show-routes {
+      padding: 0;
+  }
+}
+
 @media(max-width:769px) {
   .container {
 
@@ -172,3 +197,8 @@ section.show-spots {
   }
 }
 
+@media(max-width: 600px) {
+  section.show-spots {
+      padding: 0;
+  }
+}
