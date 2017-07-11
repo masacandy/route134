@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     resources :routes
     resources :route_spots
     resources :spots
-    resources :spot_holidays
 
     root to: "routes#index"
   end
@@ -14,7 +13,8 @@ Rails.application.routes.draw do
     resources :spots, only: %i(show)
   end
 
-  resources :privacy_policy, only: %i(index)
   get '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
+
+  resources :privacy_policy, only: %i(index)
 end

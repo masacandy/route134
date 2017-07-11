@@ -8,7 +8,6 @@ class RouteDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    route_spots: Field::HasMany,
     spots: Field::HasMany,
     id: Field::Number,
     title: Field::String,
@@ -29,8 +28,6 @@ class RouteDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :route_spots,
-    :spots,
     :id,
     :title,
   ].freeze
@@ -38,8 +35,6 @@ class RouteDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :route_spots,
-    :spots,
     :id,
     :title,
     :description,
@@ -57,8 +52,6 @@ class RouteDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :route_spots,
-    :spots,
     :title,
     :description,
     :visitation,
@@ -72,7 +65,7 @@ class RouteDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how routes are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(route)
-  #   "Route ##{route.id}"
-  # end
+  def display_resource(route)
+    "Route ##{route.title}"
+  end
 end
