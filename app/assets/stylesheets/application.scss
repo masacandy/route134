@@ -43,12 +43,6 @@ section.top-main {
   width: 100%;
 }
 
-#datepicker {
-  input {
-    height: 45px;
-  }
-}
-
 .sp {
   display: none;
 }
@@ -88,15 +82,6 @@ section.top-main {
   .sp-form {
     display: inherit !important;
     margin-top: 24px;
-
-    .class {
-      #datepicker {
-        input {
-          width: 100%;
-          margin-bottom: 8px;
-        }
-      }
-    }
 
     .control {
       .select{
