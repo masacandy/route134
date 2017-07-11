@@ -10,6 +10,14 @@ module Admin
     #     per(10)
     # end
 
+    def create
+      super
+    rescue => e
+      logger.error e
+      flash[:error] = e
+      redirect_to new_admin_spot_path
+    end
+
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
     #   Spot.find_by!(slug: param)
