@@ -12,7 +12,6 @@ class RouteDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::String,
-    visitation: Field::Number,
     transportation: Field::String.with_options(searchable: false),
     situation: Field::String.with_options(searchable: false),
     activity_time: Field::String.with_options(searchable: false),
@@ -38,7 +37,6 @@ class RouteDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :description,
-    :visitation,
     :transportation,
     :situation,
     :activity_time,
@@ -54,7 +52,6 @@ class RouteDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :description,
-    :visitation,
     :transportation,
     :situation,
     :activity_time,
