@@ -64,8 +64,6 @@ group :development, :test do
   gem 'checkstyle_filter-git'
   gem 'saddler'
   gem 'saddler-reporter-github'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :development do
