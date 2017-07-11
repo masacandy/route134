@@ -17,9 +17,6 @@ section.hero.is-fullheight.top-main
 
       = form_with url: routes_path, method: :get, local: true do |form|
         .search-form.field.has-addons.has-addons-centered.sp-form
-          .class.control
-            #datepicker
-              datepicker(:value="state.date" name="date")
           p.control
             span.select.is-medium
               = form.select :situation, Route.situations.map { |k, v| [t("routes.situations.#{k}"), v]}
@@ -32,4 +29,3 @@ section.hero.is-fullheight.top-main
           p.control.submit-button
             span
               = form.submit 'さがす', class: 'button is-primary is-medium'
-= javascript_pack_tag 'calender_vue'

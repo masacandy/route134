@@ -25,7 +25,6 @@ class RouteSpotDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :route,
     :spot,
-    :id,
     :sort,
   ].freeze
 
@@ -54,7 +53,7 @@ class RouteSpotDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how route spots are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(route_spot)
-  #   "RouteSpot ##{route_spot.id}"
-  # end
+  def display_resource(route_spot)
+    "RouteSpot ##{route_spot.route.title}"
+  end
 end

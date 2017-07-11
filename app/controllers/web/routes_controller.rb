@@ -18,18 +18,10 @@ class Web::RoutesController < Web::BaseController
 
   def find_route
     Route.find_by(
-      visitation: visiting_moment,
       situation: params[:situation],
       transportation: params[:transportation],
       activity_time: params[:activity_time]
     )
-  end
-
-  def visiting_moment
-    day = Date.parse(params[:date]).wday
-
-    return Route.visitations[:weekend] if HOLIDAYS.include?(day)
-    Route.visitations[:weekday]
   end
 
   def create_markers

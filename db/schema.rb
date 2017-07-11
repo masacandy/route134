@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170701144448) do
+ActiveRecord::Schema.define(version: 20170711133403) do
 
-  create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "route_id", null: false
     t.integer "spot_id", null: false
     t.integer "sort", null: false
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20170701144448) do
   create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false
     t.string "description", null: false
-    t.integer "visitation", null: false
     t.integer "transportation", null: false
     t.integer "situation", null: false
     t.integer "activity_time", null: false
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170701144448) do
     t.index ["active"], name: "index_routes_on_active"
   end
 
-  create_table "spot_holidays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "spot_holidays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "spot_id", null: false
     t.integer "day", null: false
     t.boolean "active", default: true, null: false

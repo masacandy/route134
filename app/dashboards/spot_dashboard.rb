@@ -8,8 +8,6 @@ class SpotDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    route_spots: Field::HasMany,
-    routes: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     description: Field::String,
@@ -18,7 +16,6 @@ class SpotDashboard < Administrate::BaseDashboard
     phone_number: Field::String,
     opens: Field::DateTime,
     close: Field::DateTime,
-    api_url: Field::String,
     address: Field::String,
     zipcode: Field::String,
     official_url: Field::String,
@@ -33,8 +30,6 @@ class SpotDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :route_spots,
-    :routes,
     :id,
     :name,
   ].freeze
@@ -42,8 +37,6 @@ class SpotDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :route_spots,
-    :routes,
     :id,
     :name,
     :description,
@@ -52,7 +45,6 @@ class SpotDashboard < Administrate::BaseDashboard
     :phone_number,
     :opens,
     :close,
-    :api_url,
     :address,
     :zipcode,
     :official_url,
@@ -65,8 +57,6 @@ class SpotDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :route_spots,
-    :routes,
     :name,
     :description,
     :longtitude,
@@ -74,7 +64,6 @@ class SpotDashboard < Administrate::BaseDashboard
     :phone_number,
     :opens,
     :close,
-    :api_url,
     :address,
     :zipcode,
     :official_url,
@@ -84,7 +73,7 @@ class SpotDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how spots are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(spot)
-  #   "Spot ##{spot.id}"
-  # end
+  def display_resource(spot)
+    "#{spot.name}"
+  end
 end
