@@ -3,19 +3,23 @@ section
 
 section.section.show-routes
   .container
+    h1.title.is-1.is-spaced
+      = @route.title
+    h2.subtitle.is-5
+      = @route.description
     .columns.is-text-centered
       .column.route-spots.is-one-third
-        - @spots.each do |spot|
+        - @route.spots.each do |spot|
           .card
+            .card-content
+              p.title.is-12
+                strong
+                  = spot.name
             .card-image
               figure.image.is-square
                 = image_tag("spots/#{spot.id}.jpg")
             .card-content
-              .media
-                .media-content
-                  p.title.is-12
-                    = spot.name
-              .content
+               .content
                 - if spot.description.size < 30
                   = spot.description
                 - else

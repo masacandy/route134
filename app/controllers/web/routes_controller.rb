@@ -2,15 +2,11 @@ class Web::RoutesController < Web::BaseController
   HOLIDAYS = [0, 6]
 
   def index
-    route = find_route
-
-    redirect_to route_path(route.id)
+    redirect_to route_path(find_route)
   end
 
   def show
-    route = Route.find(params[:id])
-
-    @spots = route.spots
+    @route = Route.find(params[:id])
     @hash = create_markers
   end
 
@@ -25,7 +21,7 @@ class Web::RoutesController < Web::BaseController
   end
 
   def create_markers
-    Gmaps4rails.build_markers(@spots) do |spot, maker|
+    Gmaps4rails.build_markers(@route.spots) do |spot, maker|
       maker.lat spot.latitude.to_f
       maker.lng spot.longtitude.to_f
     end
