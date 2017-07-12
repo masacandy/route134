@@ -111,6 +111,10 @@ section.show-routes {
       .column.route-spots {
         overflow: scroll;
 
+        .notification.is-white-back {
+          background-color: white;
+        }
+
         .card {
           margin-bottom: 32px;
 

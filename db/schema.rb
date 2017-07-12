@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711133403) do
+ActiveRecord::Schema.define(version: 20170712134635) do
 
   create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "route_id", null: false
     t.integer "spot_id", null: false
     t.integer "sort", null: false
+    t.string "moving_description", null: false
     t.boolean "active", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
