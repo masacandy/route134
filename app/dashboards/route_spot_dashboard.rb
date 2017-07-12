@@ -12,6 +12,7 @@ class RouteSpotDashboard < Administrate::BaseDashboard
     spot: Field::BelongsTo,
     id: Field::Number,
     sort: Field::Number,
+    moving_description: Field::String,
     active: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,6 +27,7 @@ class RouteSpotDashboard < Administrate::BaseDashboard
     :route,
     :spot,
     :sort,
+    :moving_description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,6 +37,7 @@ class RouteSpotDashboard < Administrate::BaseDashboard
     :spot,
     :id,
     :sort,
+    :moving_description,
     :active,
     :created_at,
     :updated_at,
@@ -47,6 +50,7 @@ class RouteSpotDashboard < Administrate::BaseDashboard
     :route,
     :spot,
     :sort,
+    :moving_description,
     :active,
   ].freeze
 
