@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712134635) do
+ActiveRecord::Schema.define(version: 20170713125037) do
 
-  create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "route_id", null: false
     t.integer "spot_id", null: false
     t.integer "sort", null: false
-    t.string "moving_description", null: false
+    t.string "moving_description", default: "", null: false, collation: "utf8_general_ci"
     t.boolean "active", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170712134635) do
     t.string "phone_number"
     t.time "opens", null: false
     t.time "close", null: false
-    t.string "api_url", null: false
+    t.string "api_url"
     t.string "address", null: false
     t.string "zipcode", null: false
     t.string "official_url"
