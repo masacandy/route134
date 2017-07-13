@@ -9,16 +9,19 @@ section.section.show-routes
       = @route.description
     .columns.is-text-centered
       .column.route-spots.is-one-third
-        - @route.spots.each do |spot|
+        - @route.spots.each_with_index do |spot, i|
           .notification.is-white-back
             .has-text-centered
               p
                 = spot.route_spots.find_by(route_id: @route.id).moving_description
           .card
             .card-content
-              p.title.is-12
-                strong
-                  = spot.name
+              .title-content
+                span.middle-image
+                  = image_tag("markers/#{i}.png")
+                span.title.is-12
+                  strong
+                    = spot.name
             .card-image
               figure.image.is-square
                 = image_tag("spots/#{spot.id}.jpg")
