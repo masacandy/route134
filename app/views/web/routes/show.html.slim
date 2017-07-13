@@ -10,6 +10,10 @@ section.section.show-routes
     .columns.is-text-centered
       .column.route-spots.is-one-third
         - @route.spots.each do |spot|
+          .notification.is-white-back
+            .has-text-centered
+              p
+                = spot.route_spots.find_by(route_id: @route.id).moving_description
           .card
             .card-content
               p.title.is-12
