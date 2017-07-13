@@ -2,11 +2,13 @@ section
   = render partial: 'web/shared/header'
 
 section.section.show-spots
+
   .container
     .card
       .card-content
-        h1.title
-          = @spot.name
+        h1.title.is-12
+          strong
+            = @spot.name
       .card-image
         figure.image.is-square
           = image_tag("spots/#{@spot.id}.jpg")
@@ -31,5 +33,8 @@ section.section.show-spots
                 i.fa.fa-phone
               span
                 = "#{@spot.phone_number}"
+
+    .back-to-link.has-text-right
+      = link_to 'ルート詳細へ戻る', :back
 
 = render partial: 'web/shared/footer'

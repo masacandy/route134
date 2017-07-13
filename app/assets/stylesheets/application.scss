@@ -118,6 +118,15 @@ section.show-routes {
         .card {
           margin-bottom: 32px;
 
+          .card-content {
+            .title-content {
+              span.middle-image {
+                vertical-align: middle;
+                margin-right: 8px;
+              }
+            }
+          }
+
           .card-image {
             figure {
               img {
@@ -178,11 +187,8 @@ section.show-spots {
         }
       }
     }
-  }
-}
-
-@media(max-width: 600px) {
-  section.show-spots {
-      padding: 0;
+    .back-to-link {
+      margin-top: 3rem;
+    }
   }
 }
