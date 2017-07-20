@@ -3,17 +3,14 @@ section
 
 section.section.show-routes
   .container
-    h1.title.is-1.is-spaced
+    h1.title.is-4
       = @route.title
-    h2.subtitle.is-5
-      = @route.description
     .columns.is-text-centered
       .column.route-spots.is-one-third
         - @route.spots.each_with_index do |spot, i|
           .notification.is-white-back
-            .has-text-centered
-              p
-                = spot.route_spots.find_by(route_id: @route.id).moving_description
+            p
+              = spot.route_spots.find_by(route_id: @route.id).moving_description
           .card
             .card-content
               .title-content
