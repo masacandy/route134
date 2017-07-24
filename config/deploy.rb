@@ -2,7 +2,7 @@
 lock "3.8.2"
 
 set :application, "route134"
-set :repo_url, "git@example.com:masacandy/route134.git"
+set :repo_url, "git@github.com:masacandy/route134.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
