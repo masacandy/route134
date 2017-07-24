@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 gem 'capistrano'
 gem 'capistrano-rails'
+gem 'capistrano-rbenv'
+gem 'capistrano3-unicorn'
+gem 'capistrano-bundler'
 
 gem 'dotenv-rails'
 
