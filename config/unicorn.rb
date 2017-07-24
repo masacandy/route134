@@ -2,7 +2,7 @@ worker_processes 3
 
 app_path = "/home/applications/route134"
 
-listen '/tmp/unicorn.sock'
+listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 
 stderr_path File.expand_path('unicorn.err.log', File.dirname(__FILE__) + '/../log')
