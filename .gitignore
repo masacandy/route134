@@ -30,5 +30,6 @@
 
 /config/unicorn.conf.rb
 /config/database.yml
+/config/initializers/constants.rb
 
 .env
