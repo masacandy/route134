@@ -25,7 +25,8 @@ section.hero.is-fullheight.top-main
               = form.select :transportation, Route.transportations.map { |k, v| [t("routes.transportations.#{k}"), v]}
           p.control
             span.select.is-medium
-              = form.select :activity_time, Route.activity_times.map { |k, v| [t("routes.activity_times.#{k}"), v]}
+              // = form.select :activity_time, Route.activity_times.map { |k, v| [t("routes.activity_times.#{k}"), v]}
+              = form.select :activity_time, [['一日中', 10], ['半日', 30]]
           p.control.submit-button
             span
               = form.submit 'さがす', class: 'button is-primary is-medium'
