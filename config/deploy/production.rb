@@ -4,7 +4,7 @@ set :rails_env, 'production'
 set :unicorn_env, 'production'
 set :unicorn_rack_env, 'production'
 
-server 'route134-production',  user: 'james', roles: %w(app), number_of_processes: 5, unicorn_memory_threshold: 1000
+server 'route134-production',  user: 'james', roles: %w(app web db), number_of_processes: 5, unicorn_memory_threshold: 1000
 
 # server-based syntax
 # ======================
