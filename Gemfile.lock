@@ -103,6 +103,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     checkstyle_filter-git (1.1.0)
       git_diff_parser
       thor
@@ -346,6 +350,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-unicorn
   capybara (~> 2.13)
+  carrierwave (~> 1.0)
   checkstyle_filter-git
   coffee-rails (~> 4.2)
   dotenv-rails
@@ -376,4 +381,4 @@ DEPENDENCIES
   webpacker!
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
