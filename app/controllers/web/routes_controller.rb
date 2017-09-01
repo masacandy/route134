@@ -1,8 +1,12 @@
 class Web::RoutesController < Web::BaseController
-  HOLIDAYS = [0, 6]
+  before_action :check_confiditon, only: %i[index]
 
   def index
-    redirect_to route_path(find_route)
+    @routes = Route.where(
+      situation: params[:situation],
+      transportation: params[:transportation],
+      activity_time: params[:activity_time]
+    )
   end
 
   def show
@@ -12,12 +16,27 @@ class Web::RoutesController < Web::BaseController
 
   private
 
-  def find_route
-    Route.find_by(
-      situation: params[:situation],
-      transportation: params[:transportation],
-      activity_time: params[:activity_time]
-    )
+  def check_confiditon
+    raise 'condition params error' if invalid_condition
+  end
+
+  def invalid_condition
+    invalid_transportation? || invalid_situation? || invalid_activity_time?
+  end
+
+  def invalid_transportation?
+    return false if params[:transportation].nil?
+    !Route.transportations.values.include?(params[:transportation].to_i)
+  end
+
+  def invalid_situation?
+    return false if params[:situation].nil?
+    !Route.situations.values.include?(params[:situation].to_i)
+  end
+
+  def invalid_activity_time?
+    return false if params[:activity_time].nil?
+    !Route.activity_times.values.include?(params[:activity_time].to_i)
   end
 
   def create_markers

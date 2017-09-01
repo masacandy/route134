@@ -100,6 +100,39 @@ section.top-main {
   }
 }
 
+// index routes
+section.index-routes {
+  .container {
+    h1.title.is-4 {
+      font-weight: bold;
+    }
+
+    .border {
+      border-top: 1px solid rgba(219, 219, 219, 0.5);
+    }
+
+    .border.top {
+      margin-bottom: 1rem;
+    }
+
+    article.media {
+      figure.media-left {
+        p.image.is-64x64 {
+          img {
+            object-fit: cover;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .border.bottom {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
 // show route
 
 section.show-routes {
