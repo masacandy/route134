@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713125037) do
+ActiveRecord::Schema.define(version: 20170727140420) do
 
   create_table "route_spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "route_id", null: false
     t.integer "spot_id", null: false
     t.integer "sort", null: false
-    t.string "moving_description", default: "", null: false, collation: "utf8_general_ci"
+    t.string "moving_description", default: "", null: false
     t.boolean "active", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20170713125037) do
     t.index ["route_id", "spot_id"], name: "index_route_spots_on_route_id_and_spot_id", unique: true
   end
 
-  create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title", null: false
-    t.string "description", null: false
+  create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string "title", null: false, collation: "utf8_general_ci"
+    t.string "description", null: false, collation: "utf8_general_ci"
     t.integer "transportation", null: false
     t.integer "situation", null: false
     t.integer "activity_time", null: false
@@ -45,18 +45,28 @@ ActiveRecord::Schema.define(version: 20170713125037) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
-    t.string "description", null: false
+  create_table "spot_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "spot_id", null: false
+    t.string "image", null: false
+    t.integer "sort", null: false
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_spot_images_on_spot_id"
+  end
+
+  create_table "spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string "name", null: false, collation: "utf8_general_ci"
+    t.string "description", null: false, collation: "utf8_general_ci"
     t.decimal "longtitude", precision: 9, scale: 6, null: false
     t.decimal "latitude", precision: 9, scale: 6, null: false
-    t.string "phone_number"
+    t.string "phone_number", collation: "utf8_general_ci"
     t.time "opens", null: false
     t.time "close", null: false
-    t.string "api_url"
-    t.string "address", null: false
-    t.string "zipcode", null: false
-    t.string "official_url"
+    t.string "api_url", collation: "utf8_general_ci"
+    t.string "address", null: false, collation: "utf8_general_ci"
+    t.string "zipcode", null: false, collation: "utf8_general_ci"
+    t.string "official_url", collation: "utf8_general_ci"
     t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
