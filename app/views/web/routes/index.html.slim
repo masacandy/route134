@@ -1,0 +1,36 @@
+- require 'irb'
+
+section
+  = render partial: 'web/shared/header'
+
+section.section.index-routes
+  .container
+    h1.title.is-4
+      - route = @routes.first
+      - transportation = t("routes.transportations.#{route.transportation}")
+      - situation = t("routes.situations.#{route.situation}")
+      - time = params[:activity_time] == 10 ? '一日中' : '半日'
+      = "#{time} #{transportation} で行く湘南 #{situation} ルート"
+
+    .border.top
+
+    - @routes.each do |route|
+      article.media
+        figure.media-left
+          p.image.is-64x64
+            = image_tag("spots/#{route.spots.first.id}.jpg")
+        .media-content
+          .content
+            p
+              strong
+                = link_to route.title, route_path(route.id)
+
+              br
+              route.description
+
+    .border.bottom
+
+    .has-text-centered
+      = link_to '戻る', :back
+
+= render partial: 'web/shared/footer'
