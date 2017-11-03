@@ -1,0 +1,17 @@
+development:
+  adapter: mysql2
+  encoding: utf8mb4
+  database: route134_development
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+production:
+  adapter: mysql2
+  encoding: utf8mb4
+  database: route134_production
+  pool: 5
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /tmp/mysql.sock
+
