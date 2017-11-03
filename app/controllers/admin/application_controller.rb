@@ -11,7 +11,7 @@ module Admin
     def authenticate_admin
       return unless Rails.env.production?
       authenticate_or_request_with_http_basic do |user,pass|
-        user == ADMIN_USER && pass == ADMIN_PASS
+        user == ENV['ADMIN_USER'] && pass == ENV['ADMIN_PASS']
       end
     end
 
