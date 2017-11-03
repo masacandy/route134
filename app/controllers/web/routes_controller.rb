@@ -1,5 +1,5 @@
 class Web::RoutesController < Web::BaseController
-  before_action :check_confiditon, only: %i[index]
+  #before_action :check_confiditon, only: %i[index]
 
   def index
     @routes = Route.where(
