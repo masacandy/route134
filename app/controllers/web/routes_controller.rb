@@ -1,7 +1,8 @@
 class Web::RoutesController < Web::BaseController
-  #before_action :check_confiditon, only: %i[index]
+  before_action :check_confiditon, only: %i[index]
 
   def index
+    puts params
     @routes = Route.where(
       situation: params[:situation],
       transportation: params[:transportation],
