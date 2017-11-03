@@ -2,7 +2,10 @@ class Web::RoutesController < Web::BaseController
   before_action :check_confiditon, only: %i[index]
 
   def index
-    puts params
+    puts params[:situation]
+    puts params[:transportation]
+    puts params[:activity_time]
+    @search_condition = search_condition
     @routes = Route.where(
       situation: params[:situation],
       transportation: params[:transportation],
@@ -16,6 +19,25 @@ class Web::RoutesController < Web::BaseController
   end
 
   private
+
+  def search_condition
+    transportation = case params[:transportation]&.to_i
+                     when 10
+                      '電車'
+                     when 20
+                      '車'
+                     end
+    situation = case params[:situation]&.to_i
+                when 10
+                 'デート'
+                when 20
+                 '一人旅'
+                when 30
+                 'みんなで'
+                end
+    time = params[:activity_time] == 10 ? '一日中' : '半日'
+    "#{time} #{transportation} で行く湘南 #{situation} ルート"
+  end
 
   def check_confiditon
     raise 'condition params error' if invalid_condition

@@ -6,12 +6,7 @@ section
 section.section.index-routes
   .container
     h1.title.is-4
-      - transportation_name = Route.transportations.index(params[:transportation]&.to_i)
-      - transportation = t("routes.transportations.#{transportation_name}")
-      - situation_name = Route.situations.index(params[:situation]&.to_i)
-      - situation = t("routes.situations.#{situation_name}")
-      - time = params[:activity_time] == 10 ? '一日中' : '半日'
-      = "#{time} #{transportation} で行く湘南 #{situation} ルート"
+      = @search_condition
 
     .border.top
 
